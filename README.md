@@ -23,7 +23,7 @@ QuizCraft is an interactive quiz application that allows users to answer randoml
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-repo/quizcraft.git
+   git clone https://github.com/elsayedessam003/QuizCraft
    ```
 
 2. Navigate to the project directory:
@@ -43,20 +43,6 @@ QuizCraft is an interactive quiz application that allows users to answer randoml
 4. Bookmark questions for review by clicking the "Bookmark" button.
 5. Submit the quiz by finishing all questions or when the timer ends.
 6. View your score on the results page.
-
-## Project Structure
-
-```
-├── index.html          # Entry point of the application
-├── css/
-│   └── styles.css      # Styling for the application
-├── js/
-│   └── quizcraft.js    # Main logic for the quiz
-├── Questions.json      # JSON file containing quiz questions
-└── Results/
-    ├── Results.html    # Results page for completed quizzes
-    └── TimeEnded.html  # Page displayed when time ends
-```
 
 ## Technologies Used
 
