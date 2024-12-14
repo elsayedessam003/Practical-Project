@@ -1,0 +1,140 @@
+PS C:\Users\Amr\Desktop\Practical> git branch Amr
+PS C:\Users\Amr\Desktop\Practical> cd .\Practical-Project\
+On branch main
+Your branch is up to date with 'origin/main'.
+
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git branch
+  Amr
+* main
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git switch Amr
+Switched to branch 'Amr'
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git add .
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git  commit -m"V1"
+[Amr 72828bb] V1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git push origin Amr
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 297 bytes | 12.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'Amr' on GitHub by visiting:
+remote:      https://github.com/elsayedessam003/Practical-Project/pull/new/Amr
+remote:
+To https://github.com/elsayedessam003/Practical-Project.git
+ * [new branch]      Amr -> Amr
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git pull
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 9 (delta 3), reused 9 (delta 3), pack-reused 0 (from 0)
+Unpacking objects: 100% (9/9), 758 bytes | 0 bytes/s, done.
+From https://github.com/elsayedessam003/Practical-Project
+ * [new branch]      Ahmed      -> origin/Ahmed
+ * [new branch]      Elsayed    -> origin/Elsayed
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+
+    git branch --set-upstream-to=origin/<branch> Amr
+
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git merge origin/ELsayed
+Auto-merging conflict.txt
+CONFLICT (add/add): Merge conflict in conflict.txt
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git add .
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git commit -m"V2"
+[Amr 97105ae] V2
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git push origin Amr
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 224 bytes | 224.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/elsayedessam003/Practical-Project.git
+   72828bb..97105ae  Amr -> Amr
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git log
+Merge: 72828bb 22cf92d
+Author: AmrMedhat360 <115822550+AmrMedhat360@users.noreply.github.com>
+Date:   Sat Dec 14 13:13:45 2024 -0800
+
+    V2
+
+commit 22cf92d5b309fe810930cc7889d4ad8173876207 (origin/Elsayed)
+Merge: 36368c6 e0a1da5
+Author: elsayedessam003 <elsayedessame@gmail.com>
+Date:   Sat Dec 14 23:02:56 2024 +0200
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git ls-files
+Exam/Exam.css
+Exam/Exam.html
+Exam/Exam.js
+Exam/Questions.json
+Images/Result.jpg
+Images/Time has Ended.png
+Images/quizcraft-high-resolution-logo-transparent.png
+Images/quizcraft-high-resolution-logo-transparent.svg
+Images/quizcraft-high-resolution-logo.png
+Login/Login.css
+Login/Login.html
+README.md
+Results/Results.html
+Results/TimeEnded.css
+SignUp/SignUp.css
+SignUp/SignUp.html
+conflict.txt
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git stash
+No local changes to save
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git stash
+Saved working directory and index state WIP on Amr: 97105ae V2
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git stash list 
+stash@{0}: WIP on Amr: 97105ae V2
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git stash show 
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+On branch Amr
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   conflict.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Saved working directory and index state WIP on Amr: 97105ae V2
+  (use "git add <file>..." to update what will be committed)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git stash
+Saved working directory and index state WIP on Amr: 97105ae V2
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git stash clear
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git tag v1
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git tag -a v1 -m"Version 1"
+fatal: tag 'v1' already exists
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git tag -a v2 -m"Version 1" 
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git tag 
+v1
+v2
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git show v2
+Tagger: AmrMedhat360 <115822550+AmrMedhat360@users.noreply.github.com>
+Date:   Sat Dec 14 13:34:09 2024 -0800
+
+
+commit 97105ae2b0a5c94227feca3afc1c239ec6dc0e98 (HEAD -> Amr, tag: v2, tag: v1, origin/Amr)
+Merge: 72828bb 22cf92d
+Author: AmrMedhat360 <115822550+AmrMedhat360@users.noreply.github.com>
+Date:   Sat Dec 14 13:13:45 2024 -0800
+
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+ * [new tag]         v1 -> v1
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git push origin --tags
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 178 bytes | 89.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/elsayedessam003/Practical-Project.git
+ * [new tag]         v2 -> v2
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git tag -d v1
+Deleted tag 'v1' (was 97105ae)
+PS C:\Users\Amr\Desktop\Practical\Practical-Project> git push origin -d v1 
+To https://github.com/elsayedessam003/Practical-Project.git
+ - [deleted]         v1
+PS C:\Users\Amr\Desktop\Practical\Practical-Project>                        
