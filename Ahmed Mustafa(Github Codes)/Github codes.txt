@@ -1,0 +1,225 @@
+PS S:\Fatma task\Practical-Project> git branch Ahmed 
+PS S:\Fatma task\Practical-Project> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS S:\Fatma task\Practical-Project> git branch
+  Ahmed
+* main
+PS S:\Fatma task\Practical-Project> git switch Ahmed
+Switched to branch 'Ahmed'
+PS S:\Fatma task\Practical-Project> git add .
+PS S:\Fatma task\Practical-Project> git commit -m "a"
+[Ahmed 86cce55] a
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+PS S:\Fatma task\Practical-Project> git push origin Ahmed
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 283 bytes | 283.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'Ahmed' on GitHub by visiting:
+remote:      https://github.com/elsayedessam003/Practical-Project/pull/new/Ahmed
+remote:
+To https://github.com/elsayedessam003/Practical-Project.git
+ * [new branch]      Ahmed -> Ahmed
+PS S:\Fatma task\Practical-Project> git pull
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 9 (delta 3), reused 9 (delta 3), pack-reused 0 (from 0)
+Unpacking objects: 100% (9/9), 772 bytes | 59.00 KiB/s, done.
+From https://github.com/elsayedessam003/Practical-Project
+ * [new branch]      Amr        -> origin/Amr
+ * [new branch]      Elsayed    -> origin/Elsayed
+ * [new branch]      sameh      -> origin/sameh
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> Ahmed
+
+PS S:\Fatma task\Practical-Project> git merge origin/Amr       
+Auto-merging conflict.txt
+CONFLICT (add/add): Merge conflict in conflict.txt
+Automatic merge failed; fix conflicts and then commit the result.
+PS S:\Fatma task\Practical-Project> git add .
+PS S:\Fatma task\Practical-Project> git commit -m "a"
+[Ahmed a804541] a
+PS S:\Fatma task\Practical-Project> git push origin Ahmed
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 293 bytes | 293.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/elsayedessam003/Practical-Project.git
+   86cce55..a804541  Ahmed -> Ahmed
+PS S:\Fatma task\Practical-Project> git log 
+commit a804541229a648835f30d2ef6f0c80957416857c (HEAD -> Ahmed, origin/Ahmed)
+Merge: 86cce55 72828bb
+Author: AhmedMustafaEL <strongfighter1020@gmail.com>
+Date:   Sat Dec 14 23:08:40 2024 +0200
+
+    a
+
+commit 72828bba1e2a0839228680491204246672a57acf (origin/Amr)
+Author: AmrMedhat360 <115822550+AmrMedhat360@users.noreply.github.com>
+Date:   Sat Dec 14 12:52:45 2024 -0800
+
+    V1
+
+commit 86cce553219789cf9200392d72ee94577202a857
+Author: AhmedMustafaEL <strongfighter1020@gmail.com>
+Date:   Sat Dec 14 22:52:32 2024 +0200
+
+    a
+
+!q
+sh: line 1: q: command not found
+!done  (press RETURN)
+...skipping...
+
+    V1
+
+commit 86cce553219789cf9200392d72ee94577202a857
+Author: AhmedMustafaEL <strongfighter1020@gmail.com>
+Date:   Sat Dec 14 22:52:32 2024 +0200
+
+    a
+
+PS S:\Fatma task\Practical-Project> git ls-files
+Exam/Exam.css
+Exam/Exam.html
+Exam/Exam.js
+Exam/Questions.json
+Images/Result.jpg
+Images/Time has Ended.png
+Images/quizcraft-high-resolution-logo-transparent.png
+Images/quizcraft-high-resolution-logo-transparent.svg
+Images/quizcraft-high-resolution-logo.png
+Login/Login.css
+Login/Login.html
+Login/Login.js
+README.md
+Results/Results.css
+Results/Results.html
+Results/Results.js
+Results/TimeEnded.css
+Results/TimeEnded.html
+SignUp/SignUp.css
+SignUp/SignUp.html
+SignUp/SignUp.js
+conflict.txt
+PS S:\Fatma task\Practical-Project> git stash 
+No local changes to save
+PS S:\Fatma task\Practical-Project> git stash
+Saved working directory and index state WIP on Ahmed: a804541 a
+PS S:\Fatma task\Practical-Project> git stash list
+stash@{0}: WIP on Ahmed: a804541 a
+PS S:\Fatma task\Practical-Project> git stash show
+ conflict.txt | 1 +
+ 1 file changed, 1 insertion(+)
+PS S:\Fatma task\Practical-Project> git stash pop 
+On branch Ahmed
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   conflict.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (da790da7a23aa3f649b4ea686ef6e42ab3cff156)
+PS S:\Fatma task\Practical-Project> git stash    
+Saved working directory and index state WIP on Ahmed: a804541 a
+PS S:\Fatma task\Practical-Project> git stash apply
+On branch Ahmed
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   conflict.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS S:\Fatma task\Practical-Project> git stash      
+Saved working directory and index state WIP on Ahmed: a804541 a
+PS S:\Fatma task\Practical-Project> git stash clear
+PS S:\Fatma task\Practical-Project> git tag Ahmed
+PS S:\Fatma task\Practical-Project> git tag -a Ahmed -m "tag" 
+fatal: tag 'Ahmed' already exists
+PS S:\Fatma task\Practical-Project> git tag -a Ahmed1 -m "tag"
+PS S:\Fatma task\Practical-Project> git tag                   
+Ahmed
+Ahmed1
+PS S:\Fatma task\Practical-Project> git show Ahmed1
+tag Ahmed1
+Tagger: AhmedMustafaEL <strongfighter1020@gmail.com>
+Date:   Sat Dec 14 23:34:11 2024 +0200
+
+tag
+
+commit a804541229a648835f30d2ef6f0c80957416857c (HEAD -> Ahmed, tag: Ahmed1, tag: Ahmed, origin/Ahmed)
+Merge: 86cce55 72828bb
+Author: AhmedMustafaEL <strongfighter1020@gmail.com>
+PS S:\Fatma task\Practical-Project> git push origin Ahmed 
+error: src refspec Ahmed matches more than one
+error: failed to push some refs to 'https://github.com/elsayedessam003/Practical-Project.git'
+PS S:\Fatma task\Practical-Project> git push origin Ahmed1
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 166 bytes | 166.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/elsayedessam003/Practical-Project.git
+ * [new tag]         Ahmed1 -> Ahmed1
+PS S:\Fatma task\Practical-Project> git push origin --tags
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/elsayedessam003/Practical-Project.git
+ * [new tag]         Ahmed -> Ahmed
+ * [new tag]         Ahmed -> Ahmed
+ * [new tag]         Ahmed -> Ahmed
+ * [new tag]         Ahmed -> Ahmed
+PS S:\Fatma task\Practical-Project> git tag -d Ahmed
+Deleted tag 'Ahmed' (was a804541)
+PS S:\Fatma task\Practical-Project> git push origin -d Ahmed
+error: dst refspec Ahmed matches more than one
+error: failed to push some refs to 'https://github.com/elsayedessam003/Practical-Project.git'
+PS S:\Fatma task\Practical-Project> git push origin -d Ahmed1
+To https://github.com/elsayedessam003/Practical-Project.git
+ - [deleted]         Ahmed1
+PS S:\Fatma task\Practical-Project> git log
+commit a804541229a648835f30d2ef6f0c80957416857c (HEAD -> Ahmed, tag: Ahmed1, origin/Ahmed)
+Merge: 86cce55 72828bb
+Author: AhmedMustafaEL <strongfighter1020@gmail.com>
+Date:   Sat Dec 14 23:08:40 2024 +0200
+
+    a
+
+commit 72828bba1e2a0839228680491204246672a57acf (origin/Amr)
+Author: AmrMedhat360 <115822550+AmrMedhat360@users.noreply.github.com>
+Date:   Sat Dec 14 12:52:45 2024 -0800
+
+    V1
+
+commit 86cce553219789cf9200392d72ee94577202a857
+Author: AhmedMustafaEL <strongfighter1020@gmail.com>
+Date:   Sat Dec 14 22:52:32 2024 +0200
+
+    a
+
+commit 4a3a6919853ae413ecdd5ae30fc9f31b73245892 (origin/main, origin/HEAD, main)
+Author: elsayedessam003 <elsayedessame@gmail.com>
+Date:   Fri Dec 13 17:20:41 2024 +0200
+
+    Readme updated
+
+commit 0005b2a07b6ed9cda5022e2fb4c0837b0fdbbeb3
+PS S:\Fatma task\Practical-Project> git log > allcodes.txt
+PS S:\Fatma task\Practical-Project> history > commands.txt
