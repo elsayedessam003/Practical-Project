@@ -1,0 +1,138 @@
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git pull
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git branch Elsayed
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+Switched to branch 'Elsayed'
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git add .
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git commit -m "Elsayed Branch Created"
+[Elsayed 36368c6] Elsayed Branch Created
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git push origin Elsayed
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 288 bytes | 288.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'Elsayed' on GitHub by visiting:
+remote:      https://github.com/elsayedessam003/Practical-Project/pull/new/Elsayed
+remote:
+To https://github.com/elsayedessam003/Practical-Project
+ * [new branch]      Elsayed -> Elsayed
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git pull
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 9 (delta 3), reused 9 (delta 3), pack-reused 0 (from 0)
+Unpacking objects: 100% (9/9), 767 bytes | 21.00 KiB/s, done.
+From https://github.com/elsayedessam003/Practical-Project
+ * [new branch]      Ahmed      -> origin/Ahmed
+ * [new branch]      Amr        -> origin/Amr
+ * [new branch]      sameh      -> origin/sameh
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+Auto-merging conflict.txt
+CONFLICT (add/add): Merge conflict in conflict.txt
+Automatic merge failed; fix conflicts and then commit the result.
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git add .
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git commit -m "Conflict had been solved"
+[Elsayed 22cf92d] Conflict had been solved
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 220 bytes | 220.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/elsayedessam003/Practical-Project
+   36368c6..22cf92d  Elsayed -> Elsayed
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git log
+commit 22cf92d5b309fe810930cc7889d4ad8173876207 (HEAD -> Elsayed, origin/Elsayed)
+Merge: 36368c6 e0a1da5
+Author: elsayedessam003 <elsayedessame@gmail.com>
+Date:   Sat Dec 14 23:02:56 2024 +0200
+
+    Conflict had been solved
+
+commit 36368c6a2efddc1fea22885602625bc9f7333bb3
+Date:   Sat Dec 14 22:55:21 2024 +0200
+
+    Elsayed Branch Created
+
+commit e0a1da50e97421121d6799ccca9d28441a90ef27 (origin/sameh)
+Author: sameh fathy <samehelewa63@gmail.com>
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git ls-files
+Exam/Exam.css
+Exam/Exam.html
+Exam/Exam.js
+Exam/Questions.json
+Images/Result.jpg
+Images/Time has Ended.png
+Images/quizcraft-high-resolution-logo-transparent.png
+Images/quizcraft-high-resolution-logo-transparent.svg
+Images/quizcraft-high-resolution-logo.png
+Login/Login.css
+Login/Login.html
+Login/Login.js
+README.md
+Results/Results.css
+Results/Results.html
+Results/TimeEnded.css
+SignUp/SignUp.css
+SignUp/SignUp.js
+conflict.txt
+Saved working directory and index state WIP on Elsayed: 22cf92d Conflict had been solved
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git stash list
+stash@{0}: WIP on Elsayed: 22cf92d Conflict had been solved
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git stash show
+ conflict.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git stash pop 
+On branch Elsayed
+  (use "git add <file>..." to update what will be committed)
+        modified:   conflict.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (dd2c3ffbe2f959dd1faa05c05f53892a709ecd90)
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git stash
+Saved working directory and index state WIP on Elsayed: 22cf92d Conflict had been solved
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git stash apply
+Changes not staged for commit:
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git stash
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git stash clear
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git tag Elsayed 
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git tag -a Elsayed2 -m "This is the first tag"
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git tag
+Elsayed
+Elsayed2
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git show Elsayed2 
+Tagger: elsayedessam003 <elsayedessame@gmail.com>
+Date:   Sat Dec 14 23:36:40 2024 +0200
+This is the first tag
+
+commit 22cf92d5b309fe810930cc7889d4ad8173876207 (HEAD -> Elsayed, tag: Elsayed2, tag: Elsayed, origin/Elsayed)
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git push origin Elsayed
+error: src refspec Elsayed matches more than one
+error: failed to push some refs to 'https://github.com/elsayedessam003/Practical-Project'
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 171 bytes | 171.00 KiB/s, done.
+To https://github.com/elsayedessam003/Practical-Project
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git push origin --tags
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+ * [new tag]         Elsayed -> Elsayed
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git tag -d Elsayed
+Deleted tag 'Elsayed' (was 22cf92d)
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git push origin -d Elsayed
+error: dst refspec Elsayed matches more than one
+error: failed to push some refs to 'https://github.com/elsayedessam003/Practical-Project'
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project> git push origin -d Elsayed2
+To https://github.com/elsayedessam003/Practical-Project
+ - [deleted]         Elsayed2
+PS C:\Users\User\Desktop\GitHUB Projects\Practical-Project>
