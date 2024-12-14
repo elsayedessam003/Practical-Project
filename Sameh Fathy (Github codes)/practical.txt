@@ -1,0 +1,166 @@
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git branch sameh
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git s
+git: 's' is not a git command. See 'git --help'.
+
+The most similar commands are
+        show
+        status
+        switch
+        lfs
+        svn
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git switch sameh
+Switched to branch 'sameh'
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git add .
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git commit -m "a"
+[sameh e0a1da5] a
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git push origin sameh
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 271 bytes | 271.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)        
+remote: Resolving deltas: 100% (1/1), completed with 1 local object. 
+remote:
+remote: Create a pull request for 'sameh' on GitHub by visiting:     
+remote:      https://github.com/elsayedessam003/Practical-Project/pull/new/sameh
+remote:
+To https://github.com/elsayedessam003/Practical-Project.git
+ * [new branch]      sameh -> sameh
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git pull
+
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 9 (delta 3), reused 9 (delta 3), pack-reused 0 (from 0 
+Unpacking objects: 100% (9/9), 784 bytes | 13.00 KiB/s, done.
+From https://github.com/elsayedessam003/Practical-Project
+ * [new branch]      Ahmed      -> origin/Ahmed
+ * [new branch]      Amr        -> origin/Amr
+ * [new branch]      Elsayed    -> origin/Elsayed
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> sameh
+
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git merge origin/Ahmed
+Auto-merging conflict.txt
+CONFLICT (add/add): Merge conflict in conflict.txt
+Automatic merge failed; fix conflicts and then commit the result.
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git add .
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git commit -m "a"
+[sameh f12881c] a
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git push origin sameh
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 279 bytes | 279.00 KiB/s, done.     
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)    
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/elsayedessam003/Practical-Project.git      
+   e0a1da5..f12881c  sameh -> sameh
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git log
+commit f12881cf485568c905e8f5a09de9fdf1066b012d (HEAD -> sameh, origin/sameh)
+Merge: e0a1da5 86cce55
+Author: sameh fathy <samehelewa63@gmail.com>
+Date:   Sun Dec 15 01:05:22 2024 +0400
+
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git ls-files
+Exam/Exam.css
+Exam/Exam.html
+Exam/Exam.js
+Exam/Questions.json
+Images/Result.jpg
+Images/Time has Ended.png
+Images/quizcraft-high-resolution-logo-transparent.png
+Images/quizcraft-high-resolution-logo-transparent.svg
+Images/quizcraft-high-resolution-logo.png
+Login/Login.css
+Login/Login.html
+Login/Login.js
+README.md
+Results/Results.css
+Results/Results.html
+Results/Results.js
+Results/TimeEnded.css
+Results/TimeEnded.html
+SignUp/SignUp.css
+SignUp/SignUp.html
+SignUp/SignUp.js
+conflict.txt
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git stash
+No local changes to save
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git stash
+Saved working directory and index state WIP on sameh: f12881c a
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git stash
+Saved working directory and index state WIP on sameh: f12881c a
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git stash list
+stash@{0}: WIP on sameh: f12881c a
+stash@{1}: WIP on sameh: f12881c a
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git stash show
+ conflict.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git stash pop
+On branch sameh
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)     
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   conflict.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (9fe24930a754f856a3c2046e2b43205a21eca34b)
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git stash
+Saved working directory and index state WIP on sameh: f12881c a
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git stash apply
+On branch sameh
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)     
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   conflict.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git stash
+Saved working directory and index state WIP on sameh: f12881c a
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git stash clear
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git tag version1 
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git tag -a version1 -m "first version"
+fatal: tag 'version1' already exists
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git tag -a version2 -m "first version"
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git tag
+version1
+version2
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git show version1
+commit f12881cf485568c905e8f5a09de9fdf1066b012d (HEAD -> sameh, tag: version2, tag: version1, origin/sameh)
+Merge: e0a1da5 86cce55
+Author: sameh fathy <samehelewa63@gmail.com>
+Date:   Sun Dec 15 01:05:22 2024 +0400
+
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git push origin version1
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/elsayedessam003/Practical-Project.git
+ * [new tag]         version1 -> version1
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git push origin --tags
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 164 bytes | 164.00 KiB/s, done.     
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)    
+To https://github.com/elsayedessam003/Practical-Project.git
+ * [new tag]         version2 -> version2
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git tag -d version1
+Deleted tag 'version1' (was f12881c)
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project> git push origin -d version1
+To https://github.com/elsayedessam003/Practical-Project.git      
+ - [deleted]         version1
+PS C:\Users\sameh fathy\Desktop\practical\Practical-Project>     
